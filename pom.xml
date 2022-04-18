@@ -130,7 +130,29 @@
 					<useUnlimitedThreads>false</useUnlimitedThreads>
 				</configuration>
 			</plugin>
-
+			
+		<!-- parallel execution
+		  	<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+    			<artifactId>maven-failsafe-plugin</artifactId>
+    			<version>3.0.0-M3</version>
+    			<executions>
+					<execution>
+						<goals>
+						<goal>integration-test</goal>
+						</goals>
+						<configuration>
+							<includes>
+								<include>**/TestRunner.java</include>
+							</includes>
+							<parallel>methods</parallel>
+							<threadcount>4</threadcount>
+							<perCoreThreadCount>true</perCoreThreadCount>
+						</configuration>
+					</execution>
+			    </executions>
+			</plugin>   -->
+			
 			<!-- <plugin> <groupId>org.apache.maven.plugins</groupId> <artifactId>maven-failsafe-plugin</artifactId> 
 				<version>3.0.0-M3</version> <executions> <execution> <goals> <goal>integration-test</goal> 
 				</goals> <configuration> UNCOMMENT - To add any exclusions if required <excludes> 
